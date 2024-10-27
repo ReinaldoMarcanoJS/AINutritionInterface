@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "api": "python3 -m uvicorn api.main:app --reload --port 8000"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

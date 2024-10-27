@@ -14,6 +14,8 @@ const responses = {
 export async function POST(request: Request) {
   try {
     const body = await request.json();
+    console.log(await body);
+    
     const response = responses[body.message as keyof typeof responses] || "Lo siento, no entendí tu pregunta. ¿Podrías reformularla?";
     return NextResponse.json({ response });
   } catch (error) {

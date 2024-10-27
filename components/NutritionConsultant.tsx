@@ -30,13 +30,15 @@ export default function NutritionConsultant() {
     setMessages(prev => [...prev, { type: 'user', content: option }]);
 
     try {
-      const response = await fetch('/api/chat', {
+      const response = await fetch("http://localhost:8000/api/chat", {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: option }),
       });
 
       const data = await response.json();
+      console.log(data);
+      
       setMessages(prev => [...prev, { type: 'bot', content: data.response }]);
     } catch (error) {
       console.error('Error:', error);
